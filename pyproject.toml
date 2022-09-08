@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "tiralabra-s2022"
+version = "0.1.0"
+description = ""
+authors = ["seppaemi <emilia.seppala@helsinki.fi>"]
+readme = "README.md"
+packages = [{include = "tiralabra_s2022"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+cowsay = "^5.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.1.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
