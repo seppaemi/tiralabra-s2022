@@ -50,7 +50,7 @@ class Game_UI:
             return self.red_played
     
     def draw_screen(self, board, game_over, tie_game, green_won,
-                    red_won, green_turn, mouse_pos):
+                    red_won, ai, green_turn, mouse_pos):
         self.screen.fill((22,8,91))
         for y_value in range(6):
             for x_value in range(7):
