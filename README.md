@@ -1,4 +1,4 @@
-[![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/PyCQA/pylint)
+[![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/PyCQA/pylint) [![Coverage Status](https://coveralls.io/repos/github/seppaemi/tiralabra-s2022/badge.svg?branch=main)](https://coveralls.io/github/seppaemi/tiralabra-s2022?branch=main)
 # Connect four 
 Tavanomainen perheillan suosikki connect four, jossa kaksi pelaajaa kilpailee kumpi saa ensin nappuloistaan neljän suoran! 
 
