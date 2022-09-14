@@ -60,7 +60,7 @@ class Play:
         ja palauttaa sen boolean arvona"""
         return gameplay.check_column_full(self.board, x)
 
-    def green_win(self):
+    def green_wins(self):
         """Funktio vihreän voitosta"""
         self.green_win = True
         self.game_over = True
@@ -75,7 +75,7 @@ class Play:
         avulla voittofunktiota"""
         result = gameplay.check_win(self.board)
         if result == 1:
-            self.green_win()
+            self.green_wins()
         if result == 2:
             self.red_wins()
 

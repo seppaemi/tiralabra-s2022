@@ -39,7 +39,7 @@ class TestMultiplayer(unittest.TestCase):
 
     def test_green_wins_ends_game(self):
         """Testaa pelin päättymisen vihreän voitettua"""
-        self.play.green_win()
+        self.play.green_wins()
         self.assertEqual(True, self.play.game_over)
 
     def test_four_hor_green_wins_game(self):
@@ -49,7 +49,7 @@ class TestMultiplayer(unittest.TestCase):
         self.play.board[2][3] = 1
         self.play.board[2][4] = 1
         self.play.check_for_win()
-        self.assertEqual(True, self.play.green_win)
+        self.assertEqual(True, self.play.green_wins)
 
     def test_four_hor_red_wins_game(self):
         """Testaa vaakatasossa punaisen voittoa"""
@@ -76,7 +76,7 @@ class TestMultiplayer(unittest.TestCase):
         self.play.board[4][3] = 1
         self.play.board[5][3] = 1
         self.play.check_for_win()
-        self.assertEqual(True, self.play.green_win)
+        self.assertEqual(True, self.play.green_wins)
 
     def test_four_vert_red_wins_game(self):
         """testaa pystyssä punaisen voittoa"""
@@ -94,7 +94,7 @@ class TestMultiplayer(unittest.TestCase):
         self.play.board[3][3] = 1
         self.play.board[4][4] = 1
         self.play.check_for_win()
-        self.assertEqual(True, self.play.green_win)
+        self.assertEqual(True, self.play.green_wins)
 
     def test_four_down_diag_red_wins_game(self):
         """Testaa viistossa alas punaisen voittoa"""
@@ -121,7 +121,7 @@ class TestMultiplayer(unittest.TestCase):
         self.play.board[4][3] = 1
         self.play.board[5][2] = 1
         self.play.check_for_win()
-        self.assertEqual(True, self.play.green_win)
+        self.assertEqual(True, self.play.green_wins)
 
     def test_restart_game_clean_board(self):
         """Testaa uudelleenaloituksen tyhjentävän pelilaudan"""
@@ -137,7 +137,7 @@ class TestMultiplayer(unittest.TestCase):
             restarted = False
         if self.play.red_wins:
             restarted = False
-        if self.play.green_win:
+        if self.play.green_wins:
             restarted = False
         if not self.play.running:
             restarted = False
