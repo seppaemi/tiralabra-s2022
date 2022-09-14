@@ -1,16 +1,18 @@
 import pygame
 
+
 class Menu_UI:
 
     def __init__(self):
         self.screen_height = 700
         self.screen_width = 700
-        self.screen = pygame.display.set_mode((self.screen_width, self.screen_height))
+        self.screen = pygame.display.set_mode(
+            (self.screen_width, self.screen_height))
         self.singleplayer_button = pygame.Rect(100, 225, 500, 150)
         self.multiplayer_button = pygame.Rect(100, 450, 500, 150)
-        self.easy_button = pygame.Rect(50,240,150,120)
-        self.medium_button = pygame.Rect(275,240,150,120)
-        self.hard_button = pygame.Rect(500,240,150,120)
+        self.easy_button = pygame.Rect(50, 240, 150, 120)
+        self.medium_button = pygame.Rect(275, 240, 150, 120)
+        self.hard_button = pygame.Rect(500, 240, 150, 120)
         self.bg_color = (255, 0, 255)
         self.button_color = (255, 255, 0)
 

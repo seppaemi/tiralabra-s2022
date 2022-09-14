@@ -2,3 +2,7 @@ __pycache__
 .pytest_cache
 .coverage
 htmlcov
+src/menu/__pycache__
+src/modules/__pycache__
+src/tests/__pycache__
+src/UI/__pycache__

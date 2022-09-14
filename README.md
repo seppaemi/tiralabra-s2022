@@ -1,3 +1,4 @@
+[![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/PyCQA/pylint)
 # Connect four 
 Tavanomainen perheillan suosikki connect four, jossa kaksi pelaajaa kilpailee kumpi saa ensin nappuloistaan neljän suoran! 
 

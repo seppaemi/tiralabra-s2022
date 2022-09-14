@@ -1,20 +1,32 @@
+"""Moduuli johon kuuluu luokka Menu
+"""
 from turtle import pos
 import pygame
 from modules.multiplayer import Play
 from UI.menu_UI import Menu_UI
 
+
 class Menu:
+    """Vastaa valikosta
+    Attributes:
+            ui: Luokka-olio; vastaa menun käyttöliittymästä
+            clicked: boolean arvo, joka kertoo mikäli
+            tietokonetta vastaan olevat vaikeustasot on painettu esiin
+            """
 
     def __init__(self):
         self.ui = Menu_UI()
         self.clicked = False
 
     def run_menu(self):
+        """Avaa pelivalikon
+        """
         pygame.init()
         self.ui.setup()
         self.menu_loop()
 
     def mouse_click(self, position):
+        """Käsittelee hiiren klikkauksen tapahtumia"""
         if self.ui.multiplayer_button.collidepoint(position):
             multiplayer_game = Play()
             multiplayer_game.run()
@@ -24,6 +36,7 @@ class Menu:
                 self.clicked = True
 
     def check_events(self):
+        """Tarkastaa tilanteen tapahtumat ja toiminnan"""
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 exit()
@@ -36,15 +49,20 @@ class Menu:
                     self.reset_menu()
 
     def draw_screen(self):
+        """Piirtää näyön riippuen siitä onko
+        vaikeustaso klikattu vai ei"""
         if self.clicked:
             self.ui.draw_screen_if_clicked()
         else:
             self.ui.draw_screen_not_clicked()
 
     def menu_loop(self):
+        """Hyödyntää check eventsiä tarkastaakseen
+        tapahtumat silmukkaa hyödyntäen ja piirtää
+        näyttöä sammumiseen asti"""
         while True:
             self.check_events()
             self.draw_screen()
-    
+
     def reset_menu(self):
         self.clicked = False
