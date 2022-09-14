@@ -21,3 +21,4 @@ Suurin haaste on ollut pienten ja turhien asioiden debugaaminen. Tekoälyn luomi
 - Testikattavuus esitettävään muotoon :)
 
 ## Testikattavuusraportti tältä viikolta:
+![coverage](https://github.com/seppaemi/tiralabra-s2022/blob/main/Dokumentaatio/coverage_w2_tira.png)
