@@ -1,7 +1,5 @@
 """Moduuli, joka sisältää tekoälyn"""
 from modules import gameplay
-"""ORDER on lista arvoja joidenka järjestyksessä on parasta käydä
-läpi pelilaudan sarakkeet"""
 ORDER = [3,2,4,1,5,0,6]
 INF = 10000000
 
@@ -65,7 +63,7 @@ def low_free(board, x):
     return -1
 
 def board_calc(board):
-    """Palauttaa pelitilanteen arvosanan
+    """Palauttaa pelitilanteelle arvosanan
     """
     score = 0
     score += check_vert(board)
