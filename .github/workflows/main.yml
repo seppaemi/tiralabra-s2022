@@ -25,6 +25,4 @@ jobs:
       - name: Coverage report
         run: poetry run coverage xml
       - name: Coverage report to Codecov
-        uses: codecov/codecov-action@v2
-      - name: Lint check
-        run: poetry run pylint src
+        run: bash <(curl -s https://codecov.io/bash)
