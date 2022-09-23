@@ -42,24 +42,6 @@ class TestMultiplayer(unittest.TestCase):
         self.play.green_wins()
         self.assertEqual(True, self.play.game_over)
 
-    def test_four_hor_green_wins_game(self):
-        """testaa vaakatasossa vihreän voittoa"""
-        self.play.board[2][1] = 1
-        self.play.board[2][2] = 1
-        self.play.board[2][3] = 1
-        self.play.board[2][4] = 1
-        self.play.check_for_win()
-        self.assertEqual(True, self.play.green_wins)
-
-    def test_four_hor_red_wins_game(self):
-        """Testaa vaakatasossa punaisen voittoa"""
-        self.play.board[4][2] = 2
-        self.play.board[4][3] = 2
-        self.play.board[4][4] = 2
-        self.play.board[4][5] = 2
-        self.play.check_for_win()
-        self.assertEqual(True, self.play.red_wins)
-
     def test_four_hor_green_ends_game(self):
         """Testaa näljän vaakatasossa vihreän voittoa"""
         self.play.board[3][4] = 1
@@ -68,60 +50,6 @@ class TestMultiplayer(unittest.TestCase):
         self.play.board[3][1] = 1
         self.play.check_for_win()
         self.assertEqual(True, self.play.game_over)
-
-    def test_four_vert_green_wins_game(self):
-        """Testaa pystyssä vihreän voittoa"""
-        self.play.board[2][3] = 1
-        self.play.board[3][3] = 1
-        self.play.board[4][3] = 1
-        self.play.board[5][3] = 1
-        self.play.check_for_win()
-        self.assertEqual(True, self.play.green_wins)
-
-    def test_four_vert_red_wins_game(self):
-        """testaa pystyssä punaisen voittoa"""
-        self.play.board[5][5] = 2
-        self.play.board[3][5] = 2
-        self.play.board[4][5] = 2
-        self.play.board[2][5] = 2
-        self.play.check_for_win()
-        self.assertEqual(True, self.play.red_wins)
-
-    def test_four_down_diag_green_wins_game(self):
-        """Testaa viistossa alas vihreän voittoa"""
-        self.play.board[1][1] = 1
-        self.play.board[2][2] = 1
-        self.play.board[3][3] = 1
-        self.play.board[4][4] = 1
-        self.play.check_for_win()
-        self.assertEqual(True, self.play.green_wins)
-
-    def test_four_down_diag_red_wins_game(self):
-        """Testaa viistossa alas punaisen voittoa"""
-        self.play.board[2][1] = 2
-        self.play.board[3][2] = 2
-        self.play.board[4][3] = 2
-        self.play.board[5][4] = 2
-        self.play.check_for_win()
-        self.assertEqual(True, self.play.red_wins)
-
-    def test_four_up_diag_red_wins_game(self):
-        """Testaa viistossa ylös punaisen voittoa"""
-        self.play.board[4][2] = 2
-        self.play.board[3][3] = 2
-        self.play.board[2][4] = 2
-        self.play.board[1][5] = 2
-        self.play.check_for_win()
-        self.assertEqual(True, self.play.red_wins)
-
-    def test_four_up_diag_green_wins_game(self):
-        """Testaa viistossa ylös vihreän voittoa"""
-        self.play.board[2][5] = 1
-        self.play.board[3][4] = 1
-        self.play.board[4][3] = 1
-        self.play.board[5][2] = 1
-        self.play.check_for_win()
-        self.assertEqual(True, self.play.green_wins)
 
     def test_restart_game_clean_board(self):
         """Testaa uudelleenaloituksen tyhjentävän pelilaudan"""
@@ -146,18 +74,6 @@ class TestMultiplayer(unittest.TestCase):
                 if self.play.board[y][x] != 0:
                     restarted = False
         self.assertEqual(False, restarted)
-
-    def test_game_ends_in_tie_when_board_full_and_no_win(self):
-        """Testaa että tulee tasapeli jos laita on täynnä eikä
-        kumpikaan voita"""
-        self.play.board = [[2, 2, 1, 2, 1, 1, 2],
-                           [1, 1, 2, 1, 2, 2, 1],
-                           [2, 2, 2, 1, 1, 1, 2],
-                           [1, 1, 2, 1, 1, 2, 1],
-                           [2, 2, 1, 2, 2, 2, 1],
-                           [1, 2, 2, 1, 1, 2, 1]]
-        self.play.check_for_tie()
-        self.assertEqual(True, self.play.tie)
 
     def test_column_full_returns_correct(self):
         """Testaa palautuuko oikea arvo kun rivi täyttyy"""

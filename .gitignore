@@ -7,3 +7,5 @@ src/modules/__pycache__
 src/tests/__pycache__
 src/UI/__pycache__
 .vscode
+codecov
+coverage.xml
