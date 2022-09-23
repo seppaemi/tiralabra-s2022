@@ -20,3 +20,4 @@ Testaaminen on selkeästi itselleni haasteellista ja tuntuu jäävän hieman tak
 - Ehkä testikattavuus esitettävään muotoon.
 
 ## Testikattavuusraportti tältä viikolta:
+![coverage](https://github.com/seppaemi/tiralabra-s2022/blob/main/Dokumentaatio/kuvat/cov_report_vko3.png)
