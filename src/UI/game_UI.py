@@ -47,7 +47,7 @@ class Game_UI:
         tie_text = self.font.render("TASAPELI", True, (255, 255, 255))
         self.screen.blit(tie_text, (250, 25))
 
-    def draw_piece(self, green_turn, mouse_pos):
+    def draw_piece(self, ai, green_turn, mouse_pos):
         """Funktio, joka piirtää pelinappulan hiiren kohdalle"""
         x = mouse_pos[0]
         x -= 50
@@ -58,7 +58,11 @@ class Game_UI:
         if green_turn:
             self.screen.blit(self.green_piece, (x, 0))
         else:
-            self.screen.blit(self.red_piece, (x, 0))
+            if ai:
+                ai_txt = self.font.render("laskelmoidaan siirtoa", True, (255, 0, 0))
+                self.screen.blit(ai_txt, (135,25))
+            else:
+                self.screen.blit(self.red_piece, (x, 0))
 
     def correct_image(self, place):
         """Funktio, joka valitsee oikean kuvan asetetulle pelimerkille"""
@@ -84,6 +88,6 @@ class Game_UI:
             else:
                 self.draw_tie()
         if not game_over:
-            self.draw_piece(green_turn, mouse_pos)
+            self.draw_piece(ai, green_turn, mouse_pos)
             pygame.display.update()
         pygame.display.flip()

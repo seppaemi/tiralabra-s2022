@@ -51,30 +51,6 @@ class TestMultiplayer(unittest.TestCase):
         self.play.check_for_win()
         self.assertEqual(True, self.play.game_over)
 
-    def test_restart_game_clean_board(self):
-        """Testaa uudelleenaloituksen tyhjentävän pelilaudan"""
-        self.play.board = [[0, 0, 0, 0, 0, 0, 0],
-                           [0, 0, 0, 0, 0, 0, 0],
-                           [0, 0, 0, 2, 0, 0, 0],
-                           [0, 0, 1, 2, 1, 1, 0],
-                           [0, 0, 1, 2, 1, 2, 0],
-                           [0, 2, 1, 1, 2, 2, 0]]
-        self.play.restart()
-        restarted = True
-        if self.play.game_over:
-            restarted = False
-        if self.play.red_wins:
-            restarted = False
-        if self.play.green_wins:
-            restarted = False
-        if not self.play.running:
-            restarted = False
-        for y in range(6):
-            for x in range(7):
-                if self.play.board[y][x] != 0:
-                    restarted = False
-        self.assertEqual(False, restarted)
-
     def test_column_full_returns_correct(self):
         """Testaa palautuuko oikea arvo kun rivi täyttyy"""
         self.play.board = [[2, 2, 1, 2, 1, 1, 2],
