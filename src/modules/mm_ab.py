@@ -4,8 +4,8 @@ from modules import gameplay
 ORDER = [3,2,4,1,5,0,6]
 INF = 10000000
 
-def minimax(board, max_bool, depth, alpha, beta):
-    """Toteuttaa minimax algoritmin
+def minmax(board, max_bool, depth, alpha, beta):
+    """Toteuttaa minmax algoritmin
     """
     if depth == 0:
         return board_calc(board)
@@ -13,7 +13,7 @@ def minimax(board, max_bool, depth, alpha, beta):
     if winner == 2:
         return 10000
     if winner == 1:
-        return -1000
+        return -10000
     if max_bool:
         top_score = -INF
         for x in ORDER:
@@ -21,10 +21,12 @@ def minimax(board, max_bool, depth, alpha, beta):
             if y == -1:
                 continue
             board[y][x] = 2
-            score = minimax(board, False, depth - 1, alpha, beta)
+            score = minmax(board, False, depth - 1, alpha, beta)
             board[y][x] = 0
             top_score = max(top_score, score)
             alpha = max(alpha, score)
+            if beta <=alpha:
+                break
         return top_score
     if not max_bool:
         top_score = INF
@@ -33,15 +35,17 @@ def minimax(board, max_bool, depth, alpha, beta):
             if y == -1:
                 continue
             board[y][x] = 1
-            score = minimax(board, True, depth - 1, alpha, beta)
+            score = minmax(board, True, depth - 1, alpha, beta)
             board[y][x] = 0
             top_score = min(top_score, score)
             beta = min(beta, score)
+            if beta <= alpha:
+                break
         return top_score
 
 def best_move_check(board, depth):
     """Funktio, joka palauttaa parhaan reitin.
-    Kutsuu minimax algoritmia."""
+    Kutsuu minmax algoritmia."""
     action = (-1, -1)
     top_score = -INF
     for x in ORDER:
@@ -49,7 +53,7 @@ def best_move_check(board, depth):
         if y == -1:
             continue
         board[y][x] = 2
-        score = minimax(board, False, depth, -INF, INF)
+        score = minmax(board, False, depth, -INF, INF)
         board[y][x] = 0
         if score > top_score:
             top_score = score
@@ -68,13 +72,13 @@ def board_calc(board):
     """
     score = 0
     score += check_vert(board)
-    if score >= 10000 or score <= -1000:
+    if score >= 10000 or score <= -10000:
         return score
     score += check_hor(board)
-    if score >= 10000 or score <= -1000:
+    if score >= 10000 or score <= -10000:
         return score
     score += check_diag_up(board)
-    if score >= 10000 or score <= -1000:
+    if score >= 10000 or score <= -10000:
         return score
     score += check_diag_down(board)
     return score

@@ -14,7 +14,7 @@ class SinglePlayer(Play):
     def __init__(self, level):
         """Konstruktori, jossa level kuvaa syvyyttä millä tekoäly pelaa"""
         super().__init__()
-        self.header = "Tekoälyä vastaan"
+        self.title = "tekoälyä vastaan"
         self.level = level
         self.ai = True
     
@@ -24,7 +24,7 @@ class SinglePlayer(Play):
         self.board[y][x] = 2
         self.green_turn = True
 
-    def mouse_click(self, pos):
+    def mouse(self, pos):
         """Tekee siirron hiiren klikkauksen mukaan"""
         if not self.game_over:
             (x,y) = pos

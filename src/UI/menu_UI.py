@@ -1,7 +1,6 @@
 """Moduuli joka sisältää luokan Menu_UI"""
 import pygame
 
-
 class Menu_UI:
     """Luokka joka huolehtii päävalikon käyttöliittymästä
     Attributes:
