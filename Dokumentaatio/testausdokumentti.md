@@ -15,5 +15,13 @@ Testikattavuusraportin voi luoda komennolla **poetry run invoke coverage-report*
 jonka jälkeen suorittaa **coverage html**
 Tämä luo testikattavuusraportin juurihakemiston tmlcov kansioon. Kattavuusraportti löytyy index.html tiedostosta, jonka voi avata esimerkiksi komennolla **google-chrome index.html**
 
-## Suorituskykyestaus
-ei ole vielä :)
+## Suorituskykyestaus:
+Tekoälyn siirron keskinopeutta voi testata komentorivillä komennolla **poetry run invoke prformance**
+### Suorituskykytestien toiminta:
+- Komentoriviltä annetaan komento joka kertoo millä tasolla ohjelmaa testataan
+**h** on helppo
+**m** on medium
+**v** vaikea
+- Sen jälkeen komentoriville annetaan otoskoko, joka annetaan kokonaislukuarvona.
+- Ohjelma tulostaa vastauksessa keskiarvon ja varianssin
+- Ohjelma sammuu antamalla komento **q**

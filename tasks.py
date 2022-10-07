@@ -19,3 +19,7 @@ def pylint(ctx):
 @task
 def test(ctx):
 	ctx.run("pytest src", pty=True)
+
+@task
+def prformance(ctx):
+	ctx.run("python3 src/performance_test.py", pty=True)
