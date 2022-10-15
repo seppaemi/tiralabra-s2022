@@ -22,4 +22,4 @@ def test(ctx):
 
 @task
 def prformance(ctx):
-	ctx.run("python3 src/performance_test.py", pty=True)
+	ctx.run("python3 src/performance_tests.py", pty=True)

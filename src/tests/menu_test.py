@@ -23,3 +23,4 @@ class TestMenu(unittest.TestCase):
         self.menu.clicked = True
         self.menu.reset_menu()
         self.assertEqual(False, self.menu.clicked)
+

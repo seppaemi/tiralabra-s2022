@@ -35,4 +35,22 @@ class TestSinglePlayer(unittest.TestCase):
                             [0,0,0,0,2,0,0],
                             [0,0,0,1,2,1,0],
                             [0,0,0,1,2,1,0]], self.play.board)
+
+    def test_mouse_clicked_does_nothing_if_full_colum_is_clicked(self):
+        """Testaa ettei täyttä saraketta klikatessa siihen saa lisättyä
+        enää pelimerkkejä"""
+        self.play.board = [[0, 0, 2, 0, 0, 0, 0],
+                           [0, 0, 0, 1, 0, 0, 0],
+                           [0, 0, 0, 2, 2, 0, 0],
+                           [0, 0, 0, 1, 2, 0, 0],
+                           [0, 0, 1, 2, 1, 0, 0],
+                           [0, 1, 2, 1, 2, 2, 0]]
+        self.play.green_turn = True
+        self.play.mouse((225, 467))
+        self.assertEqual([[0, 0, 2, 0, 0, 0, 0],
+                          [0, 0, 0, 1, 0, 0, 0],
+                          [0, 0, 0, 2, 2, 0, 0],
+                          [0, 0, 0, 1, 2, 0, 0],
+                          [0, 0, 1, 2, 1, 0, 0],
+                          [0, 1, 2, 1, 2, 2, 0]], self.play.board)
                             

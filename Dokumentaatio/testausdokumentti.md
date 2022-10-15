@@ -4,8 +4,8 @@
 
 Luokille Menu, Play ja SinglePlayer sekä toiminnallisuuksille mm_ab ja gameplay on tehty yskikkötestausta. Ulkopuolelle olen jättänyt kaikki UI-luokat, niiden vastatessa pääosin vain pelin ulkomuodosta.
 
-### Kattavuusraportti viikolla neljä
-![coverage](https://github.com/seppaemi/tiralabra-s2022/blob/main/Dokumentaatio/kuvat/coverage_week_four.png)
+### Kattavuusraportti viikolla kuusi
+![coverage](https://github.com/seppaemi/tiralabra-s2022/blob/main/Dokumentaatio/kuvat/coverage_week_six.png)
 
 Testikattavuus on tällä hetkellä puutteellinne, koska en ole testannut pygamea kutsuvia komentoja tai käyttöliittymän metodia kutsuvia funktioita.
 

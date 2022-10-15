@@ -79,3 +79,76 @@ class TestMinMax(unittest.TestCase):
                       [0,0,1,2,1,0,0],
                       [0,1,2,1,2,2,0]]
         self.assertEqual(-1000, mm_ab.board_calc(self.board))
+  
+    def test_ai_making_line_and_blocking_one(self):
+        """Testaa tekeekö tekoäly optimoidumman siirron, kun voi
+        samalla estää ja tehdä rivin"""
+        self.board = [[0,0,0,0,0,0,0], 
+                      [0,0,0,0,0,0,0],
+                      [0,0,0,0,0,0,0],
+                      [0,0,0,0,2,1,2],
+                      [0,0,2,2,1,1,1],
+                      [0,0,2,1,1,2,1]]
+        self.assertEqual((2,5), mm_ab.best_move_check(self.board, 4))
+  
+    def test_smart_move_if_win_in_two(self):
+        """Testataan tekeekö tekoäly voiton kahden päästä"""
+        self.board = [[0,0,0,0,0,0,0], 
+                      [0,0,0,0,0,0,0],
+                      [0,0,0,1,0,0,0],
+                      [0,0,0,2,1,0,0],
+                      [0,2,0,2,1,2,0],
+                      [1,1,2,1,2,1,1]]
+        self.assertEqual((4,2), mm_ab.best_move_check(self.board, 4))
+
+    def test_move_after_smart_move(self):
+        """testataan minkä siirron tekoäly tekee 
+        äskeisen siirron jälkeen"""
+        self.board = [[0,0,0,0,0,0,0], 
+                      [0,0,0,0,0,0,0],
+                      [0,0,0,1,0,0,0],
+                      [0,0,1,2,1,0,0],
+                      [0,2,2,2,1,2,0],
+                      [1,1,2,1,2,1,1]]
+        self.assertEqual((4,0), mm_ab.best_move_check(self.board, 2))
+
+    def test_smart_move_if_lose_in_two(self):
+        """Testaa ai siirtoa jos toisella voitto kahden siirron
+        päästä"""
+        self.board = [[0,0,0,0,0,0,0], 
+                      [0,0,0,0,0,0,0],
+                      [0,0,0,0,0,0,0],
+                      [0,0,2,0,1,0,1],
+                      [0,2,1,1,1,2,1],
+                      [1,1,2,2,2,1,2]]
+        self.assertEqual((3,3), mm_ab.best_move_check(self.board, 4))
+
+    def test_to_win_when_can_block(self):
+        """Testaa tilannetta missä molemmilla mahdollisuus voittoon"""
+        self.board = [[0,0,0,0,0,0,0], 
+                      [0,0,0,0,0,0,0],
+                      [0,0,0,0,0,0,0],
+                      [0,0,0,2,1,0,0],
+                      [0,0,2,2,2,1,0],
+                      [0,1,1,1,2,1,1]]
+        self.assertEqual((4,1), mm_ab.best_move_check(self.board, 4))
+
+    def test_block_if_no_chance_to_win(self):
+        """testaa tilannetta jossa tekoäly ei voi voittaa
+        mutta voi päättyä voittoon tai tasapeliin"""
+        self.board = [[0,0,0,1,2,1,1], 
+                      [1,2,1,1,1,2,1],
+                      [2,2,1,1,1,2,2],
+                      [2,1,2,2,1,1,1],
+                      [1,1,2,1,2,2,2],
+                      [1,2,2,1,1,1,2]]
+        self.assertEqual((0,2), mm_ab.best_move_check(self.board, 4))
+
+    def the_empty_board_fot_tests(self):
+        """tyhjä jota käytän testeihin MUISTA POISTAA"""
+        self.board = [[0,0,0,0,0,0,0], 
+                      [0,0,0,0,0,0,0],
+                      [0,0,0,0,0,0,0],
+                      [0,0,0,0,0,0,0],
+                      [0,0,0,0,0,0,0],
+                      [0,0,0,0,0,0,0]]

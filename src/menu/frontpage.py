@@ -81,4 +81,5 @@ class Menu:
             self.draw_screen()
 
     def reset_menu(self):
+        """palauttaa menun"""
         self.clicked = False
