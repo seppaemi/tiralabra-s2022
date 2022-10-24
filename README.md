@@ -23,5 +23,7 @@ Tavanomainen perheillan suosikki connect four, jossa kaksi pelaajaa kilpailee ku
 
 [viikkoraportti 6](https://github.com/seppaemi/tiralabra-s2022/blob/main/Dokumentaatio/Viikkoraportit/viikkoraportti_6.md)
 
+[loppupalautusraportti](https://github.com/seppaemi/tiralabra-s2022/blob/main/Dokumentaatio/Viikkoraportit/loppupalautusraportti.md)
+
 ## Kuva ohjelmasta
 ![connectfour](https://github.com/seppaemi/tiralabra-s2022/blob/main/Dokumentaatio/kuvat/connectfour_friend.png)
