@@ -143,12 +143,3 @@ class TestMinMax(unittest.TestCase):
                       [1,1,2,1,2,2,2],
                       [1,2,2,1,1,1,2]]
         self.assertEqual((0,2), mm_ab.best_move_check(self.board, 4))
-
-    def the_empty_board_fot_tests(self):
-        """tyhjä jota käytän testeihin MUISTA POISTAA"""
-        self.board = [[0,0,0,0,0,0,0], 
-                      [0,0,0,0,0,0,0],
-                      [0,0,0,0,0,0,0],
-                      [0,0,0,0,0,0,0],
-                      [0,0,0,0,0,0,0],
-                      [0,0,0,0,0,0,0]]
